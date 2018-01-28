@@ -12,11 +12,12 @@ docker pull ${AWS_DOCKER_ARN}/${BUILD_CONTAINER}:latest
 
 echo "--- :docker: invoking the command"
 
+set -x
 docker run \
     -e ${BUILDKITE_COMMIT} \
     -e ${BUILDKITE_BUILD_NUMBER} \
     -e ${BUILDKITE_BRANCH} \
     -e ${BUILDKITE_BRANCH} \
     -v /var/run/docker.sock:/var/run/docker.sock
-    -v ${BUILD_DIR}:/builddir -w="/builddir"
+    -v ${BUILD_DIR}:-w="/build"
     ${AWS_DOCKER_ARN}/${BUILD_CONTAINER}:latest ${RUNSCRIPT}
