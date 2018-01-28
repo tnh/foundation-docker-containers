@@ -1,5 +1,5 @@
-.PHONY build
+.PHONY: buid 
 
 build:
 	bundle install
-	cd jre8 ; make build
+	cd jre8 && make all
