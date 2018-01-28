@@ -1,5 +1,5 @@
 env:
   AWS_DEFAULT_REGION: "ap-southeast-2"
 steps:
-  - name: ":package: building and testing jre8"
-    command : "cd jdk8 ; make all"
+  - name: ":package: building and testing docker containers"
+    command : "make build"

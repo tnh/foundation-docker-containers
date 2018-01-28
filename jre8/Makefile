@@ -10,7 +10,6 @@ all: build push
 test:
 	bundle exec rspec spec/Dockerfile_spec.rb
 
-
 build: test build-docker
 
 build-docker:
