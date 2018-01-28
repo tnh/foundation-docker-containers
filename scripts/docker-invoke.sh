@@ -18,6 +18,6 @@ docker run \
     -e ${BUILDKITE_BUILD_NUMBER} \
     -e ${BUILDKITE_BRANCH} \
     -e ${BUILDKITE_BRANCH} \
-    -v /var/run/docker.sock:/var/run/docker.sock
-    -v ${BUILD_DIR}:-w="/build"
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v ${BUILD_DIR}:/build" \
     ${AWS_DOCKER_ARN}/${BUILD_CONTAINER}:latest ${RUNSCRIPT}
