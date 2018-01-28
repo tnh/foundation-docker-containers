@@ -8,7 +8,7 @@ AWS_DOCKER_ARN ?= 1234556-fill-in-or-set
 all: build push
 
 test:
-	../scripts/docker-invoke.sh ruby-tests "bundle exec rspec spec/Dockerfile_spec.rb"
+	../scripts/docker-invoke.sh example/ruby25 "bundle exec rspec spec/Dockerfile_spec.rb"
 
 build: test build-docker
 
