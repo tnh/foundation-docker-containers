@@ -2,6 +2,7 @@
 
 setup-buildkite-env:
 	gem install bundle 
+	gem environment
 	which bundle 
 	bundle install
   
