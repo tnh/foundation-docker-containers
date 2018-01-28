@@ -10,7 +10,7 @@ all: build push
 test:
 	bundle exec rspec spec/Dockerfile_spec.rb
 
-build: test build-docker
+build: build-docker
 
 build-docker:
 	docker build -t ${CONTAINER_NAME}:${HASH} .
