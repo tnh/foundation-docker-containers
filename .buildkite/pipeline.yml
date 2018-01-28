@@ -1,5 +1,11 @@
 env:
   AWS_DEFAULT_REGION: "ap-southeast-2"
+
 steps:
-  - name: ":package: building and testing docker containers"
-    command : "make build"
+  - name: ":package: building ruby test container"
+    command : "cd ruby-tets; make build"
+
+  - wait
+
+  - name: ":package: building jre8"
+    command : "cd jre8; make build"
