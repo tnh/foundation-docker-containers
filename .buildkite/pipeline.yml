@@ -3,7 +3,7 @@ env:
 
 steps:
   - name: ":package: building ruby test container"
-    command : "cd ruby-tests; make build"
+    command : "cd ruby-tests; make all"
 
   - wait
 
