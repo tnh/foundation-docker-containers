@@ -6,6 +6,11 @@ set -eo pipefail
 
 set +e
 
+echo "--- :docker: pulling down the build container"
+docker pull ${AWS_DOCKER_ARN}/${BUILD_CONTAINER}:latest
+
+echo "---- :docker: invoking the command"
+
 docker run \
     -e ${BUILDKITE_COMMIT} \
     -e ${BUILDKITE_BUILD_NUMBER} \
