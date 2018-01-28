@@ -1,4 +1,4 @@
-.PHONY: buid 
+.PHONY: build 
 
 build:
 	bundle install
