@@ -1,6 +1,6 @@
 FROM ruby:2.5.0-alpine3.7
 
-RUN apk add --update docker && \
+RUN apk add --update docker libffi-dev && \
     rm -rf /var/cache/apk/*
 
 RUN gem install bundler 
